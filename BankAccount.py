@@ -20,13 +20,28 @@ class BankAccount:
     else:
       self.balance -= amount
       print(f"Amount withdrawn: ${amount:.2f} = New Balance: ${self.balance:.2f}")
+  
+  def get_balance(self):
+    print(f"Hello! Your current account balance is: ${self.balance:.2f}.")
+    return self.balance
+  
+  def add_interest(self):
+    interest = []
+    annual_interest = 0.00083
+    interest = self.balance * annual_interest
+    return interest
 
 rocko_bank = BankAccount("Rocko Paul")
 
 print(f"Initial balance: ${rocko_bank.balance:.2f}")
 
-rocko_bank.deposit(400)
+rocko_bank.deposit(1000)
 print(f"After deposit: {rocko_bank.balance:.2f}")
 
 rocko_bank.withdraw(500)
 print(f"After withdraw: {rocko_bank.balance:.2f}")
+
+rocko_bank.get_balance()
+
+rocko_bank.add_interest()
+rocko_bank.get_balance()
