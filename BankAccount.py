@@ -8,6 +8,14 @@ class BankAccount:
   
   def generate_account_number(self):
     return random.randint(10000000, 99999999)
+  
+  def deposit(self, amount):
+    self.balance += amount
+    print(f"Amount deposited: ${amount:.2f} = New Balance: ${self.balance:.2f}")
 
 rocko_bank = BankAccount("Rocko Paul")
-print(rocko_bank.account_number)
+
+print(f"Initial balance: ${rocko_bank.balance:.2f}")
+
+rocko_bank.deposit(500)
+print(f"After deposit: {rocko_bank.balance:.2f}")
