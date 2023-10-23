@@ -12,10 +12,21 @@ class BankAccount:
   def deposit(self, amount):
     self.balance += amount
     print(f"Amount deposited: ${amount:.2f} = New Balance: ${self.balance:.2f}")
+  
+  def withdraw(self, amount):
+    if amount > self.balance:
+      print("Insufficient funds. You will be charged an overdraft fee of $10.00.")
+      self.balance -= 10
+    else:
+      self.balance -= amount
+      print(f"Amount withdrawn: ${amount:.2f} = New Balance: ${self.balance:.2f}")
 
 rocko_bank = BankAccount("Rocko Paul")
 
 print(f"Initial balance: ${rocko_bank.balance:.2f}")
 
-rocko_bank.deposit(500)
+rocko_bank.deposit(400)
 print(f"After deposit: {rocko_bank.balance:.2f}")
+
+rocko_bank.withdraw(500)
+print(f"After withdraw: {rocko_bank.balance:.2f}")
