@@ -1,5 +1,7 @@
+# Import (random) method to assist in generating random account numbers
 import random
 
+# Create BankAccount class
 class BankAccount:
   def __init__(self, full_name, account_number=None):
     self.full_name = full_name
@@ -41,24 +43,69 @@ class BankAccount:
           Balance: ${formatted_balance}
           """)
 
-# (5) Rocko Example
+#########################################################################    
 
-# rocko_bank = BankAccount("Rocko Paul")
+# (5) Rocko BankAccount Example (1/3)
 
-# print(f"Initial balance: ${rocko_bank.balance:.2f}")
+# Instantiate Rocko's bank account information
+rocko_bank = BankAccount("Rocko Paul")
 
-# rocko_bank.deposit(1000)
-# print(f"After deposit: {rocko_bank.balance:.2f}")
+# Display Rocko's bank account information
+rocko_bank.print_statement()
 
-# rocko_bank.withdraw(500)
-# print(f"After withdraw: {rocko_bank.balance:.2f}")
+# Rocko get's a huge allowance from his dad, Joe Paul
+rocko_bank.deposit(130000)
+print("Rocko! Woof! You got a nice allowance from Dad!")
 
-# rocko_bank.get_balance()
+# Rocko immediately buys the entire Costco stock of dental sticks
+rocko_bank.withdraw(1000)
 
-# rocko_bank.add_interest()
-# rocko_bank.get_balance()
+# Display Rocko's new bank account balance
+rocko_bank.print_statement()
 
-# rocko_bank.print_statement()
+#########################################################################
+
+# (5) Dad deposits money and gets some interest Example (2/3)
+
+# Instantiate Dad's bank account information
+dad_bank = BankAccount("Dad Paul")
+
+# Display Dad's bank account information
+dad_bank.print_statement()
+
+# Dad comes home from work, back in the day, and deposits his work check
+dad_bank.deposit(2000)
+
+# It is the end of the month so let's reward Dad with some interest
+dad_bank.add_interest()
+
+# Let's check out the updated balance!
+dad_bank.print_statement()
+
+#########################################################################
+
+# (5) Mango gets an allowance, but doesn't have enough for a hair cut
+
+# Instantiate Mango's bank account information
+mango_bank = BankAccount("Mango Tango")
+
+# Display Mango's bank account information
+mango_bank.print_statement()
+
+# Deposit an allowance into Mango's bank
+mango_bank.deposit(100)
+
+# Mango needs a hair cut BAD
+mango_bank.withdraw(150)
+
+# Poor Mango needs more money
+mango_bank.deposit(500)
+
+# Gets a nice hair cut!
+mango_bank.withdraw(150)
+
+# Display Mango's final account balance for the day
+mango_bank.print_statement()
 
 #########################################################################
 
