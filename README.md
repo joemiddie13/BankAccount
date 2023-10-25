@@ -1,12 +1,12 @@
 # Student Information
-Joseph Paul
-October 25, 2023
-ACS 1111 Object Oriented Programming
+Joseph Paul  
+October 25, 2023  
+ACS 1111 Object Oriented Programming  
 
 # Assignment
-Project Title: Bank Account
-Programming Language: Python
-Code Editor: VS Code
+Project Title: Bank Account  
+Programming Language: Python  
+Code Editor: VS Code  
 
 Our class is learning object oriented programming for the first time and this is our first project. We were tasked with creating a class that defines a bank account to include some attributes you would expect: name, account number, and money balance.
 
