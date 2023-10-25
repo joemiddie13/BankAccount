@@ -3,7 +3,7 @@ import random
 
 # Create BankAccount class
 class BankAccount:
-  def __init__(self, full_name, account_number=None):
+  def __init__(self, full_name, account_number=None, ):
     self.full_name = full_name
     if account_number:
       self.account_number = account_number
@@ -12,13 +12,16 @@ class BankAccount:
     self.balance = 0
   
   def generate_account_number(self):
+    """Generates a random 8-digit account number."""
     return random.randint(10000000, 99999999)
   
   def deposit(self, amount):
+    """Deposits a given amount of $ to the bank account."""
     self.balance += amount
     print(f"Amount deposited: ${amount:.2f} = New Balance: ${self.balance:.2f}")
   
   def withdraw(self, amount):
+    """Withdraws a specified amount of $ from the bank account."""
     if amount > self.balance:
       print("Insufficient funds. You will be charged an overdraft fee of $10.00.")
       self.balance -= 10
@@ -27,15 +30,18 @@ class BankAccount:
       print(f"Amount withdrawn: ${amount:.2f} = New Balance: ${self.balance:.2f}")
   
   def get_balance(self):
+    """Simple statement printing to the terminal of the current balance."""
     print(f"Hello! Your current account balance is: ${self.balance:.2f}.")
     return self.balance
   
   def add_interest(self):
+    """Adds a monthly interest based on a 0.083% interest rate."""
     annual_interest = 0.00083
     interest = self.balance * annual_interest
     self.balance += interest
 
   def print_statement(self):
+    """Prints a nicely formatted bank account statement."""
     formatted_balance = "{:,.2f}".format(self.balance)
     print(f"""
           {self.full_name}
