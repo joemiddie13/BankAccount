@@ -3,13 +3,14 @@ import random
 
 # Create BankAccount class
 class BankAccount:
-  def __init__(self, full_name, account_number=None, ):
+  def __init__(self, full_name, account_number=None, account_type="savings"):
     self.full_name = full_name
     if account_number:
       self.account_number = account_number
     else:
       self.account_number = self.generate_account_number()
     self.balance = 0
+    self.account_type = account_type # Stretch challenge (1/4)
   
   def generate_account_number(self):
     """Generates a random 8-digit account number."""
@@ -36,7 +37,10 @@ class BankAccount:
   
   def add_interest(self):
     """Adds a monthly interest based on a 0.083% interest rate."""
-    annual_interest = 0.00083
+    if self.account_type == "savings":
+      annual_interest = 0.012
+    else:
+      annual_interest = 0.00083
     interest = self.balance * annual_interest
     self.balance += interest
 
@@ -45,6 +49,7 @@ class BankAccount:
     formatted_balance = "{:,.2f}".format(self.balance)
     print(f"""
           {self.full_name}
+          Account Type: {self.account_type.capitalize()}
           Account No.: {self.account_number}
           Balance: ${formatted_balance}
           """)
@@ -54,7 +59,7 @@ class BankAccount:
 # (5) Rocko BankAccount Example (1/3)
 
 # Instantiate Rocko's bank account information
-rocko_bank = BankAccount("Rocko Paul")
+rocko_bank = BankAccount("Rocko Paul", "savings")
 
 # Display Rocko's bank account information
 rocko_bank.print_statement()
@@ -136,4 +141,25 @@ mitchell_bank.print_statement()
 mitchell_bank.withdraw(150)
 
 # Print final statement of Mitchell's spending habit for the day
+mitchell_bank.print_statement()
+
+#########################################################################
+# Stretch challenge (2/4)
+
+bank = []
+bank.append(rocko_bank)
+bank.append(dad_bank)
+bank.append(mango_bank)
+bank.append(mitchell_bank)
+
+def add_interest_accounts():
+  """Loop applies interest to all accounts within the bank list."""
+  for account in bank:
+    account.add_interest()
+
+add_interest_accounts()
+
+rocko_bank.print_statement()
+dad_bank.print_statement()
+mango_bank.print_statement()
 mitchell_bank.print_statement()
