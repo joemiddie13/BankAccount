@@ -1,7 +1,29 @@
-# BankAccount
-ACS 1111 Object Oriented Programming Assignment - Bank Account
+# Student Information
+Joseph Paul
+October 25, 2023
+ACS 1111 Object Oriented Programming
 
-Assignment Description:
+# Assignment
+Project Title: Bank Account
+Programming Language: Python
+Code Editor: VS Code
+
+Our class is learning object oriented programming for the first time and this is our first project. We were tasked with creating a class that defines a bank account to include some attributes you would expect: name, account number, and money balance.
+
+At the start of my code you will find `import random` from the Python library allowing my program to randomize numbers which I utilized in account number creation.
+
+Within the class attributes, I set `account_number=None` so that an account number could be randomized when a bank account was instantiated.
+
+As part of one of the "stretch goals" I set the `account_type="savings"` so that the bank accounts could be defined.
+
+As you scroll through the `BankAccount` class, you will find 6 methods that are common amongst real bank accounts. Ranging from depositing money, withdrawing money, and printing a current statement of your balance. 
+
+Towards the bottom of `BankAccount.py` you will find 4 different bank account examples as asked by the requirements of the project.
+
+To see the original assignment description assigned in class, please continue to scroll below:
+
+
+ORIGINAL: Assignment Description from class:
 
 # Bank Account 🏦
 
@@ -10,12 +32,6 @@ Assignment Description:
 Using object-oriented programming concepts, your task is to create a Python program that simulates a bank account.
 
 ## Requirements
-
-### Submission Requirements:
-1. Your submitted code should be in a new (public) repo on Github.
-1. Your respository should have a minimum of **5 commits**.
-1. Your repository should include a README with the name of your project and a description.
-1. Submit the link to your repo on Gradescope.
 
 ### Assignment Requirements:
 

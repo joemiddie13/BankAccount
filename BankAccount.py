@@ -57,6 +57,7 @@ class BankAccount:
 #########################################################################    
 
 # (5) Rocko BankAccount Example (1/3)
+print("Rocko's Bank Account Example (1/3)")
 
 # Instantiate Rocko's bank account information
 rocko_bank = BankAccount("Rocko Paul", "savings")
@@ -75,8 +76,10 @@ rocko_bank.withdraw(1000)
 rocko_bank.print_statement()
 
 #########################################################################
+print("##################################################################")
 
 # (5) Dad deposits money and gets some interest Example (2/3)
+print("Dad Paul's Bank Account Example (2/3)")
 
 # Instantiate Dad's bank account information
 dad_bank = BankAccount("Dad Paul")
@@ -94,8 +97,10 @@ dad_bank.add_interest()
 dad_bank.print_statement()
 
 #########################################################################
+print("##################################################################")
 
 # (5) Mango gets an allowance, but doesn't have enough for a hair cut
+print("Mango's Bank Account Example (3/3)")
 
 # Instantiate Mango's bank account information
 mango_bank = BankAccount("Mango Tango")
@@ -119,8 +124,10 @@ mango_bank.withdraw(150)
 mango_bank.print_statement()
 
 #########################################################################
+print("##################################################################")
 
 # (6) Mitchell Example!
+print("Mitchell BankAccount Example")
 
 # Instantiate Mitchell's bank account information using BankAccount class
 mitchell_bank = BankAccount("Mitchell Hudson", "03141592")
@@ -143,9 +150,12 @@ mitchell_bank.withdraw(150)
 # Print final statement of Mitchell's spending habit for the day
 mitchell_bank.print_statement()
 
+print("##################################################################")
 #########################################################################
 # Stretch challenge (2/4)
+print("Stretch challenge (2/4)")
 
+# Create a list of the different bank accounts and store them in a variable
 bank = []
 bank.append(rocko_bank)
 bank.append(dad_bank)
